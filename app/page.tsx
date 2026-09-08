@@ -27,7 +27,7 @@ export default async function Home() {
                 </div>
 
                 <span className="text-xl font-semibold tracking-tight">
-                  Medi-Mind
+                  MediMind
                 </span>
               </div>
 
