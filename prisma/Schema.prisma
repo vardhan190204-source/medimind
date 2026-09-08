@@ -1,0 +1,80 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum CaseStatus {
+  OPEN
+  IN_PROGRESS
+  COMPLETED
+  ARCHIVED
+}
+
+enum DocumentType {
+  LAB_REPORT
+  XRAY
+  CT
+  MRI
+  NOTES
+  OTHER
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String
+  username  String   @unique
+  password  String
+  cases     Case[]
+  createdAt DateTime @default(now())
+}
+
+model Case {
+  id            String      @id @default(cuid())
+  title         String
+  patientAge    Int?
+  patientGender String?
+  symptoms      String?
+  clinicalNotes String?
+  status        CaseStatus  @default(OPEN)
+
+  createdById String
+  createdBy   User @relation(fields: [createdById], references: [id])
+
+  documents Document[]
+  analyses  Analysis[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Document {
+  id            String       @id @default(cuid())
+  caseId        String
+  case          Case         @relation(fields: [caseId], references: [id], onDelete: Cascade)
+
+  type          DocumentType
+  fileUrl       String
+  fileName      String
+  mimeType      String
+  extractedText String?
+
+  createdAt DateTime @default(now())
+}
+
+model Analysis {
+  id             String   @id @default(cuid())
+  caseId         String
+  case           Case     @relation(fields: [caseId], references: [id], onDelete: Cascade)
+
+  summary        String
+  differentialDx Json
+  redFlags       String[]
+  recommendations Json
+  aiModel        String
+
+  createdAt DateTime @default(now())
+}
