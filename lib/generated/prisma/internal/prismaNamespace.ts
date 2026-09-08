@@ -799,12 +799,12 @@ export type DocumentScalarFieldEnum = (typeof DocumentScalarFieldEnum)[keyof typ
 export const AnalysisScalarFieldEnum = {
   id: 'id',
   caseId: 'caseId',
-  summary: 'summary',
-  differentialDx: 'differentialDx',
-  redFlags: 'redFlags',
-  recommendations: 'recommendations',
+  createdAt: 'createdAt',
   aiModel: 'aiModel',
-  createdAt: 'createdAt'
+  differentialDx: 'differentialDx',
+  recommendations: 'recommendations',
+  redFlags: 'redFlags',
+  summary: 'summary'
 } as const
 
 export type AnalysisScalarFieldEnum = (typeof AnalysisScalarFieldEnum)[keyof typeof AnalysisScalarFieldEnum]

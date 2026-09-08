@@ -256,9 +256,9 @@ export type CaseWhereInput = {
   createdById?: Prisma.StringFilter<"Case"> | string
   createdAt?: Prisma.DateTimeFilter<"Case"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Case"> | Date | string
+  analyses?: Prisma.AnalysisListRelationFilter
   createdBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   documents?: Prisma.DocumentListRelationFilter
-  analyses?: Prisma.AnalysisListRelationFilter
 }
 
 export type CaseOrderByWithRelationInput = {
@@ -272,9 +272,9 @@ export type CaseOrderByWithRelationInput = {
   createdById?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  analyses?: Prisma.AnalysisOrderByRelationAggregateInput
   createdBy?: Prisma.UserOrderByWithRelationInput
   documents?: Prisma.DocumentOrderByRelationAggregateInput
-  analyses?: Prisma.AnalysisOrderByRelationAggregateInput
 }
 
 export type CaseWhereUniqueInput = Prisma.AtLeast<{
@@ -291,9 +291,9 @@ export type CaseWhereUniqueInput = Prisma.AtLeast<{
   createdById?: Prisma.StringFilter<"Case"> | string
   createdAt?: Prisma.DateTimeFilter<"Case"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Case"> | Date | string
+  analyses?: Prisma.AnalysisListRelationFilter
   createdBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   documents?: Prisma.DocumentListRelationFilter
-  analyses?: Prisma.AnalysisListRelationFilter
 }, "id">
 
 export type CaseOrderByWithAggregationInput = {
@@ -340,9 +340,9 @@ export type CaseCreateInput = {
   status?: $Enums.CaseStatus
   createdAt?: Date | string
   updatedAt?: Date | string
+  analyses?: Prisma.AnalysisCreateNestedManyWithoutCaseInput
   createdBy: Prisma.UserCreateNestedOneWithoutCasesInput
   documents?: Prisma.DocumentCreateNestedManyWithoutCaseInput
-  analyses?: Prisma.AnalysisCreateNestedManyWithoutCaseInput
 }
 
 export type CaseUncheckedCreateInput = {
@@ -356,8 +356,8 @@ export type CaseUncheckedCreateInput = {
   createdById: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  documents?: Prisma.DocumentUncheckedCreateNestedManyWithoutCaseInput
   analyses?: Prisma.AnalysisUncheckedCreateNestedManyWithoutCaseInput
+  documents?: Prisma.DocumentUncheckedCreateNestedManyWithoutCaseInput
 }
 
 export type CaseUpdateInput = {
@@ -370,9 +370,9 @@ export type CaseUpdateInput = {
   status?: Prisma.EnumCaseStatusFieldUpdateOperationsInput | $Enums.CaseStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  analyses?: Prisma.AnalysisUpdateManyWithoutCaseNestedInput
   createdBy?: Prisma.UserUpdateOneRequiredWithoutCasesNestedInput
   documents?: Prisma.DocumentUpdateManyWithoutCaseNestedInput
-  analyses?: Prisma.AnalysisUpdateManyWithoutCaseNestedInput
 }
 
 export type CaseUncheckedUpdateInput = {
@@ -386,8 +386,8 @@ export type CaseUncheckedUpdateInput = {
   createdById?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  documents?: Prisma.DocumentUncheckedUpdateManyWithoutCaseNestedInput
   analyses?: Prisma.AnalysisUncheckedUpdateManyWithoutCaseNestedInput
+  documents?: Prisma.DocumentUncheckedUpdateManyWithoutCaseNestedInput
 }
 
 export type CaseCreateManyInput = {
@@ -586,8 +586,8 @@ export type CaseCreateWithoutCreatedByInput = {
   status?: $Enums.CaseStatus
   createdAt?: Date | string
   updatedAt?: Date | string
-  documents?: Prisma.DocumentCreateNestedManyWithoutCaseInput
   analyses?: Prisma.AnalysisCreateNestedManyWithoutCaseInput
+  documents?: Prisma.DocumentCreateNestedManyWithoutCaseInput
 }
 
 export type CaseUncheckedCreateWithoutCreatedByInput = {
@@ -600,8 +600,8 @@ export type CaseUncheckedCreateWithoutCreatedByInput = {
   status?: $Enums.CaseStatus
   createdAt?: Date | string
   updatedAt?: Date | string
-  documents?: Prisma.DocumentUncheckedCreateNestedManyWithoutCaseInput
   analyses?: Prisma.AnalysisUncheckedCreateNestedManyWithoutCaseInput
+  documents?: Prisma.DocumentUncheckedCreateNestedManyWithoutCaseInput
 }
 
 export type CaseCreateOrConnectWithoutCreatedByInput = {
@@ -656,8 +656,8 @@ export type CaseCreateWithoutDocumentsInput = {
   status?: $Enums.CaseStatus
   createdAt?: Date | string
   updatedAt?: Date | string
-  createdBy: Prisma.UserCreateNestedOneWithoutCasesInput
   analyses?: Prisma.AnalysisCreateNestedManyWithoutCaseInput
+  createdBy: Prisma.UserCreateNestedOneWithoutCasesInput
 }
 
 export type CaseUncheckedCreateWithoutDocumentsInput = {
@@ -700,8 +700,8 @@ export type CaseUpdateWithoutDocumentsInput = {
   status?: Prisma.EnumCaseStatusFieldUpdateOperationsInput | $Enums.CaseStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  createdBy?: Prisma.UserUpdateOneRequiredWithoutCasesNestedInput
   analyses?: Prisma.AnalysisUpdateManyWithoutCaseNestedInput
+  createdBy?: Prisma.UserUpdateOneRequiredWithoutCasesNestedInput
 }
 
 export type CaseUncheckedUpdateWithoutDocumentsInput = {
@@ -812,8 +812,8 @@ export type CaseUpdateWithoutCreatedByInput = {
   status?: Prisma.EnumCaseStatusFieldUpdateOperationsInput | $Enums.CaseStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  documents?: Prisma.DocumentUpdateManyWithoutCaseNestedInput
   analyses?: Prisma.AnalysisUpdateManyWithoutCaseNestedInput
+  documents?: Prisma.DocumentUpdateManyWithoutCaseNestedInput
 }
 
 export type CaseUncheckedUpdateWithoutCreatedByInput = {
@@ -826,8 +826,8 @@ export type CaseUncheckedUpdateWithoutCreatedByInput = {
   status?: Prisma.EnumCaseStatusFieldUpdateOperationsInput | $Enums.CaseStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  documents?: Prisma.DocumentUncheckedUpdateManyWithoutCaseNestedInput
   analyses?: Prisma.AnalysisUncheckedUpdateManyWithoutCaseNestedInput
+  documents?: Prisma.DocumentUncheckedUpdateManyWithoutCaseNestedInput
 }
 
 export type CaseUncheckedUpdateManyWithoutCreatedByInput = {
@@ -848,13 +848,13 @@ export type CaseUncheckedUpdateManyWithoutCreatedByInput = {
  */
 
 export type CaseCountOutputType = {
-  documents: number
   analyses: number
+  documents: number
 }
 
 export type CaseCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  documents?: boolean | CaseCountOutputTypeCountDocumentsArgs
   analyses?: boolean | CaseCountOutputTypeCountAnalysesArgs
+  documents?: boolean | CaseCountOutputTypeCountDocumentsArgs
 }
 
 /**
@@ -870,15 +870,15 @@ export type CaseCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensi
 /**
  * CaseCountOutputType without action
  */
-export type CaseCountOutputTypeCountDocumentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.DocumentWhereInput
+export type CaseCountOutputTypeCountAnalysesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.AnalysisWhereInput
 }
 
 /**
  * CaseCountOutputType without action
  */
-export type CaseCountOutputTypeCountAnalysesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.AnalysisWhereInput
+export type CaseCountOutputTypeCountDocumentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.DocumentWhereInput
 }
 
 
@@ -893,9 +893,9 @@ export type CaseSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   createdById?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  analyses?: boolean | Prisma.Case$analysesArgs<ExtArgs>
   createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   documents?: boolean | Prisma.Case$documentsArgs<ExtArgs>
-  analyses?: boolean | Prisma.Case$analysesArgs<ExtArgs>
   _count?: boolean | Prisma.CaseCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["case"]>
 
@@ -942,9 +942,9 @@ export type CaseSelectScalar = {
 
 export type CaseOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "patientAge" | "patientGender" | "symptoms" | "clinicalNotes" | "status" | "createdById" | "createdAt" | "updatedAt", ExtArgs["result"]["case"]>
 export type CaseInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  analyses?: boolean | Prisma.Case$analysesArgs<ExtArgs>
   createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   documents?: boolean | Prisma.Case$documentsArgs<ExtArgs>
-  analyses?: boolean | Prisma.Case$analysesArgs<ExtArgs>
   _count?: boolean | Prisma.CaseCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type CaseIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -957,9 +957,9 @@ export type CaseIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
 export type $CasePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Case"
   objects: {
+    analyses: Prisma.$AnalysisPayload<ExtArgs>[]
     createdBy: Prisma.$UserPayload<ExtArgs>
     documents: Prisma.$DocumentPayload<ExtArgs>[]
-    analyses: Prisma.$AnalysisPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1366,9 +1366,9 @@ readonly fields: CaseFieldRefs;
  */
 export interface Prisma__CaseClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  analyses<T extends Prisma.Case$analysesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Case$analysesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AnalysisPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   createdBy<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   documents<T extends Prisma.Case$documentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Case$documentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DocumentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  analyses<T extends Prisma.Case$analysesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Case$analysesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AnalysisPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1809,30 +1809,6 @@ export type CaseDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Internal
 }
 
 /**
- * Case.documents
- */
-export type Case$documentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Document
-   */
-  select?: Prisma.DocumentSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Document
-   */
-  omit?: Prisma.DocumentOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.DocumentInclude<ExtArgs> | null
-  where?: Prisma.DocumentWhereInput
-  orderBy?: Prisma.DocumentOrderByWithRelationInput | Prisma.DocumentOrderByWithRelationInput[]
-  cursor?: Prisma.DocumentWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.DocumentScalarFieldEnum | Prisma.DocumentScalarFieldEnum[]
-}
-
-/**
  * Case.analyses
  */
 export type Case$analysesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1854,6 +1830,30 @@ export type Case$analysesArgs<ExtArgs extends runtime.Types.Extensions.InternalA
   take?: number
   skip?: number
   distinct?: Prisma.AnalysisScalarFieldEnum | Prisma.AnalysisScalarFieldEnum[]
+}
+
+/**
+ * Case.documents
+ */
+export type Case$documentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Document
+   */
+  select?: Prisma.DocumentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Document
+   */
+  omit?: Prisma.DocumentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.DocumentInclude<ExtArgs> | null
+  where?: Prisma.DocumentWhereInput
+  orderBy?: Prisma.DocumentOrderByWithRelationInput | Prisma.DocumentOrderByWithRelationInput[]
+  cursor?: Prisma.DocumentWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.DocumentScalarFieldEnum | Prisma.DocumentScalarFieldEnum[]
 }
 
 /**

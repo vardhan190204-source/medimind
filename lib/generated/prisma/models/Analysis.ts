@@ -27,28 +27,28 @@ export type AggregateAnalysis = {
 export type AnalysisMinAggregateOutputType = {
   id: string | null
   caseId: string | null
-  summary: string | null
-  aiModel: string | null
   createdAt: Date | null
+  aiModel: string | null
+  summary: string | null
 }
 
 export type AnalysisMaxAggregateOutputType = {
   id: string | null
   caseId: string | null
-  summary: string | null
-  aiModel: string | null
   createdAt: Date | null
+  aiModel: string | null
+  summary: string | null
 }
 
 export type AnalysisCountAggregateOutputType = {
   id: number
   caseId: number
-  summary: number
-  differentialDx: number
-  redFlags: number
-  recommendations: number
-  aiModel: number
   createdAt: number
+  aiModel: number
+  differentialDx: number
+  recommendations: number
+  redFlags: number
+  summary: number
   _all: number
 }
 
@@ -56,28 +56,28 @@ export type AnalysisCountAggregateOutputType = {
 export type AnalysisMinAggregateInputType = {
   id?: true
   caseId?: true
-  summary?: true
-  aiModel?: true
   createdAt?: true
+  aiModel?: true
+  summary?: true
 }
 
 export type AnalysisMaxAggregateInputType = {
   id?: true
   caseId?: true
-  summary?: true
-  aiModel?: true
   createdAt?: true
+  aiModel?: true
+  summary?: true
 }
 
 export type AnalysisCountAggregateInputType = {
   id?: true
   caseId?: true
-  summary?: true
-  differentialDx?: true
-  redFlags?: true
-  recommendations?: true
-  aiModel?: true
   createdAt?: true
+  aiModel?: true
+  differentialDx?: true
+  recommendations?: true
+  redFlags?: true
+  summary?: true
   _all?: true
 }
 
@@ -156,12 +156,12 @@ export type AnalysisGroupByArgs<ExtArgs extends runtime.Types.Extensions.Interna
 export type AnalysisGroupByOutputType = {
   id: string
   caseId: string
-  summary: string
-  differentialDx: runtime.JsonValue
-  redFlags: string[]
-  recommendations: runtime.JsonValue
-  aiModel: string
   createdAt: Date
+  aiModel: string
+  differentialDx: runtime.JsonValue
+  recommendations: runtime.JsonValue
+  redFlags: string[]
+  summary: string
   _count: AnalysisCountAggregateOutputType | null
   _min: AnalysisMinAggregateOutputType | null
   _max: AnalysisMaxAggregateOutputType | null
@@ -188,24 +188,24 @@ export type AnalysisWhereInput = {
   NOT?: Prisma.AnalysisWhereInput | Prisma.AnalysisWhereInput[]
   id?: Prisma.StringFilter<"Analysis"> | string
   caseId?: Prisma.StringFilter<"Analysis"> | string
-  summary?: Prisma.StringFilter<"Analysis"> | string
-  differentialDx?: Prisma.JsonFilter<"Analysis">
-  redFlags?: Prisma.StringNullableListFilter<"Analysis">
-  recommendations?: Prisma.JsonFilter<"Analysis">
-  aiModel?: Prisma.StringFilter<"Analysis"> | string
   createdAt?: Prisma.DateTimeFilter<"Analysis"> | Date | string
+  aiModel?: Prisma.StringFilter<"Analysis"> | string
+  differentialDx?: Prisma.JsonFilter<"Analysis">
+  recommendations?: Prisma.JsonFilter<"Analysis">
+  redFlags?: Prisma.StringNullableListFilter<"Analysis">
+  summary?: Prisma.StringFilter<"Analysis"> | string
   case?: Prisma.XOR<Prisma.CaseScalarRelationFilter, Prisma.CaseWhereInput>
 }
 
 export type AnalysisOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   caseId?: Prisma.SortOrder
-  summary?: Prisma.SortOrder
-  differentialDx?: Prisma.SortOrder
-  redFlags?: Prisma.SortOrder
-  recommendations?: Prisma.SortOrder
-  aiModel?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  aiModel?: Prisma.SortOrder
+  differentialDx?: Prisma.SortOrder
+  recommendations?: Prisma.SortOrder
+  redFlags?: Prisma.SortOrder
+  summary?: Prisma.SortOrder
   case?: Prisma.CaseOrderByWithRelationInput
 }
 
@@ -215,24 +215,24 @@ export type AnalysisWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.AnalysisWhereInput[]
   NOT?: Prisma.AnalysisWhereInput | Prisma.AnalysisWhereInput[]
   caseId?: Prisma.StringFilter<"Analysis"> | string
-  summary?: Prisma.StringFilter<"Analysis"> | string
-  differentialDx?: Prisma.JsonFilter<"Analysis">
-  redFlags?: Prisma.StringNullableListFilter<"Analysis">
-  recommendations?: Prisma.JsonFilter<"Analysis">
-  aiModel?: Prisma.StringFilter<"Analysis"> | string
   createdAt?: Prisma.DateTimeFilter<"Analysis"> | Date | string
+  aiModel?: Prisma.StringFilter<"Analysis"> | string
+  differentialDx?: Prisma.JsonFilter<"Analysis">
+  recommendations?: Prisma.JsonFilter<"Analysis">
+  redFlags?: Prisma.StringNullableListFilter<"Analysis">
+  summary?: Prisma.StringFilter<"Analysis"> | string
   case?: Prisma.XOR<Prisma.CaseScalarRelationFilter, Prisma.CaseWhereInput>
 }, "id">
 
 export type AnalysisOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   caseId?: Prisma.SortOrder
-  summary?: Prisma.SortOrder
-  differentialDx?: Prisma.SortOrder
-  redFlags?: Prisma.SortOrder
-  recommendations?: Prisma.SortOrder
-  aiModel?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  aiModel?: Prisma.SortOrder
+  differentialDx?: Prisma.SortOrder
+  recommendations?: Prisma.SortOrder
+  redFlags?: Prisma.SortOrder
+  summary?: Prisma.SortOrder
   _count?: Prisma.AnalysisCountOrderByAggregateInput
   _max?: Prisma.AnalysisMaxOrderByAggregateInput
   _min?: Prisma.AnalysisMinOrderByAggregateInput
@@ -244,88 +244,88 @@ export type AnalysisScalarWhereWithAggregatesInput = {
   NOT?: Prisma.AnalysisScalarWhereWithAggregatesInput | Prisma.AnalysisScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"Analysis"> | string
   caseId?: Prisma.StringWithAggregatesFilter<"Analysis"> | string
-  summary?: Prisma.StringWithAggregatesFilter<"Analysis"> | string
-  differentialDx?: Prisma.JsonWithAggregatesFilter<"Analysis">
-  redFlags?: Prisma.StringNullableListFilter<"Analysis">
-  recommendations?: Prisma.JsonWithAggregatesFilter<"Analysis">
-  aiModel?: Prisma.StringWithAggregatesFilter<"Analysis"> | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Analysis"> | Date | string
+  aiModel?: Prisma.StringWithAggregatesFilter<"Analysis"> | string
+  differentialDx?: Prisma.JsonWithAggregatesFilter<"Analysis">
+  recommendations?: Prisma.JsonWithAggregatesFilter<"Analysis">
+  redFlags?: Prisma.StringNullableListFilter<"Analysis">
+  summary?: Prisma.StringWithAggregatesFilter<"Analysis"> | string
 }
 
 export type AnalysisCreateInput = {
   id?: string
-  summary: string
-  differentialDx: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  redFlags?: Prisma.AnalysisCreateredFlagsInput | string[]
-  recommendations: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  aiModel: string
   createdAt?: Date | string
+  aiModel: string
+  differentialDx: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  recommendations: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  redFlags?: Prisma.AnalysisCreateredFlagsInput | string[]
+  summary: string
   case: Prisma.CaseCreateNestedOneWithoutAnalysesInput
 }
 
 export type AnalysisUncheckedCreateInput = {
   id?: string
   caseId: string
-  summary: string
-  differentialDx: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  redFlags?: Prisma.AnalysisCreateredFlagsInput | string[]
-  recommendations: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  aiModel: string
   createdAt?: Date | string
+  aiModel: string
+  differentialDx: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  recommendations: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  redFlags?: Prisma.AnalysisCreateredFlagsInput | string[]
+  summary: string
 }
 
 export type AnalysisUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  summary?: Prisma.StringFieldUpdateOperationsInput | string
-  differentialDx?: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  redFlags?: Prisma.AnalysisUpdateredFlagsInput | string[]
-  recommendations?: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  aiModel?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  aiModel?: Prisma.StringFieldUpdateOperationsInput | string
+  differentialDx?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  recommendations?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  redFlags?: Prisma.AnalysisUpdateredFlagsInput | string[]
+  summary?: Prisma.StringFieldUpdateOperationsInput | string
   case?: Prisma.CaseUpdateOneRequiredWithoutAnalysesNestedInput
 }
 
 export type AnalysisUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   caseId?: Prisma.StringFieldUpdateOperationsInput | string
-  summary?: Prisma.StringFieldUpdateOperationsInput | string
-  differentialDx?: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  redFlags?: Prisma.AnalysisUpdateredFlagsInput | string[]
-  recommendations?: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  aiModel?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  aiModel?: Prisma.StringFieldUpdateOperationsInput | string
+  differentialDx?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  recommendations?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  redFlags?: Prisma.AnalysisUpdateredFlagsInput | string[]
+  summary?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type AnalysisCreateManyInput = {
   id?: string
   caseId: string
-  summary: string
-  differentialDx: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  redFlags?: Prisma.AnalysisCreateredFlagsInput | string[]
-  recommendations: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  aiModel: string
   createdAt?: Date | string
+  aiModel: string
+  differentialDx: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  recommendations: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  redFlags?: Prisma.AnalysisCreateredFlagsInput | string[]
+  summary: string
 }
 
 export type AnalysisUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  summary?: Prisma.StringFieldUpdateOperationsInput | string
-  differentialDx?: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  redFlags?: Prisma.AnalysisUpdateredFlagsInput | string[]
-  recommendations?: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  aiModel?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  aiModel?: Prisma.StringFieldUpdateOperationsInput | string
+  differentialDx?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  recommendations?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  redFlags?: Prisma.AnalysisUpdateredFlagsInput | string[]
+  summary?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type AnalysisUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   caseId?: Prisma.StringFieldUpdateOperationsInput | string
-  summary?: Prisma.StringFieldUpdateOperationsInput | string
-  differentialDx?: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  redFlags?: Prisma.AnalysisUpdateredFlagsInput | string[]
-  recommendations?: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  aiModel?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  aiModel?: Prisma.StringFieldUpdateOperationsInput | string
+  differentialDx?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  recommendations?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  redFlags?: Prisma.AnalysisUpdateredFlagsInput | string[]
+  summary?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type AnalysisListRelationFilter = {
@@ -349,28 +349,28 @@ export type StringNullableListFilter<$PrismaModel = never> = {
 export type AnalysisCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   caseId?: Prisma.SortOrder
-  summary?: Prisma.SortOrder
-  differentialDx?: Prisma.SortOrder
-  redFlags?: Prisma.SortOrder
-  recommendations?: Prisma.SortOrder
-  aiModel?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  aiModel?: Prisma.SortOrder
+  differentialDx?: Prisma.SortOrder
+  recommendations?: Prisma.SortOrder
+  redFlags?: Prisma.SortOrder
+  summary?: Prisma.SortOrder
 }
 
 export type AnalysisMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   caseId?: Prisma.SortOrder
-  summary?: Prisma.SortOrder
-  aiModel?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  aiModel?: Prisma.SortOrder
+  summary?: Prisma.SortOrder
 }
 
 export type AnalysisMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   caseId?: Prisma.SortOrder
-  summary?: Prisma.SortOrder
-  aiModel?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  aiModel?: Prisma.SortOrder
+  summary?: Prisma.SortOrder
 }
 
 export type AnalysisCreateNestedManyWithoutCaseInput = {
@@ -426,22 +426,22 @@ export type AnalysisUpdateredFlagsInput = {
 
 export type AnalysisCreateWithoutCaseInput = {
   id?: string
-  summary: string
-  differentialDx: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  redFlags?: Prisma.AnalysisCreateredFlagsInput | string[]
-  recommendations: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  aiModel: string
   createdAt?: Date | string
+  aiModel: string
+  differentialDx: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  recommendations: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  redFlags?: Prisma.AnalysisCreateredFlagsInput | string[]
+  summary: string
 }
 
 export type AnalysisUncheckedCreateWithoutCaseInput = {
   id?: string
-  summary: string
-  differentialDx: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  redFlags?: Prisma.AnalysisCreateredFlagsInput | string[]
-  recommendations: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  aiModel: string
   createdAt?: Date | string
+  aiModel: string
+  differentialDx: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  recommendations: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  redFlags?: Prisma.AnalysisCreateredFlagsInput | string[]
+  summary: string
 }
 
 export type AnalysisCreateOrConnectWithoutCaseInput = {
@@ -476,52 +476,52 @@ export type AnalysisScalarWhereInput = {
   NOT?: Prisma.AnalysisScalarWhereInput | Prisma.AnalysisScalarWhereInput[]
   id?: Prisma.StringFilter<"Analysis"> | string
   caseId?: Prisma.StringFilter<"Analysis"> | string
-  summary?: Prisma.StringFilter<"Analysis"> | string
-  differentialDx?: Prisma.JsonFilter<"Analysis">
-  redFlags?: Prisma.StringNullableListFilter<"Analysis">
-  recommendations?: Prisma.JsonFilter<"Analysis">
-  aiModel?: Prisma.StringFilter<"Analysis"> | string
   createdAt?: Prisma.DateTimeFilter<"Analysis"> | Date | string
+  aiModel?: Prisma.StringFilter<"Analysis"> | string
+  differentialDx?: Prisma.JsonFilter<"Analysis">
+  recommendations?: Prisma.JsonFilter<"Analysis">
+  redFlags?: Prisma.StringNullableListFilter<"Analysis">
+  summary?: Prisma.StringFilter<"Analysis"> | string
 }
 
 export type AnalysisCreateManyCaseInput = {
   id?: string
-  summary: string
-  differentialDx: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  redFlags?: Prisma.AnalysisCreateredFlagsInput | string[]
-  recommendations: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  aiModel: string
   createdAt?: Date | string
+  aiModel: string
+  differentialDx: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  recommendations: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  redFlags?: Prisma.AnalysisCreateredFlagsInput | string[]
+  summary: string
 }
 
 export type AnalysisUpdateWithoutCaseInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  summary?: Prisma.StringFieldUpdateOperationsInput | string
-  differentialDx?: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  redFlags?: Prisma.AnalysisUpdateredFlagsInput | string[]
-  recommendations?: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  aiModel?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  aiModel?: Prisma.StringFieldUpdateOperationsInput | string
+  differentialDx?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  recommendations?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  redFlags?: Prisma.AnalysisUpdateredFlagsInput | string[]
+  summary?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type AnalysisUncheckedUpdateWithoutCaseInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  summary?: Prisma.StringFieldUpdateOperationsInput | string
-  differentialDx?: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  redFlags?: Prisma.AnalysisUpdateredFlagsInput | string[]
-  recommendations?: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  aiModel?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  aiModel?: Prisma.StringFieldUpdateOperationsInput | string
+  differentialDx?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  recommendations?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  redFlags?: Prisma.AnalysisUpdateredFlagsInput | string[]
+  summary?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type AnalysisUncheckedUpdateManyWithoutCaseInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  summary?: Prisma.StringFieldUpdateOperationsInput | string
-  differentialDx?: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  redFlags?: Prisma.AnalysisUpdateredFlagsInput | string[]
-  recommendations?: Prisma.JsonNullValueInput | runtime.InputJsonValue
-  aiModel?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  aiModel?: Prisma.StringFieldUpdateOperationsInput | string
+  differentialDx?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  recommendations?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  redFlags?: Prisma.AnalysisUpdateredFlagsInput | string[]
+  summary?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 
@@ -529,51 +529,51 @@ export type AnalysisUncheckedUpdateManyWithoutCaseInput = {
 export type AnalysisSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   caseId?: boolean
-  summary?: boolean
-  differentialDx?: boolean
-  redFlags?: boolean
-  recommendations?: boolean
-  aiModel?: boolean
   createdAt?: boolean
+  aiModel?: boolean
+  differentialDx?: boolean
+  recommendations?: boolean
+  redFlags?: boolean
+  summary?: boolean
   case?: boolean | Prisma.CaseDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["analysis"]>
 
 export type AnalysisSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   caseId?: boolean
-  summary?: boolean
-  differentialDx?: boolean
-  redFlags?: boolean
-  recommendations?: boolean
-  aiModel?: boolean
   createdAt?: boolean
+  aiModel?: boolean
+  differentialDx?: boolean
+  recommendations?: boolean
+  redFlags?: boolean
+  summary?: boolean
   case?: boolean | Prisma.CaseDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["analysis"]>
 
 export type AnalysisSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   caseId?: boolean
-  summary?: boolean
-  differentialDx?: boolean
-  redFlags?: boolean
-  recommendations?: boolean
-  aiModel?: boolean
   createdAt?: boolean
+  aiModel?: boolean
+  differentialDx?: boolean
+  recommendations?: boolean
+  redFlags?: boolean
+  summary?: boolean
   case?: boolean | Prisma.CaseDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["analysis"]>
 
 export type AnalysisSelectScalar = {
   id?: boolean
   caseId?: boolean
-  summary?: boolean
-  differentialDx?: boolean
-  redFlags?: boolean
-  recommendations?: boolean
-  aiModel?: boolean
   createdAt?: boolean
+  aiModel?: boolean
+  differentialDx?: boolean
+  recommendations?: boolean
+  redFlags?: boolean
+  summary?: boolean
 }
 
-export type AnalysisOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "caseId" | "summary" | "differentialDx" | "redFlags" | "recommendations" | "aiModel" | "createdAt", ExtArgs["result"]["analysis"]>
+export type AnalysisOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "caseId" | "createdAt" | "aiModel" | "differentialDx" | "recommendations" | "redFlags" | "summary", ExtArgs["result"]["analysis"]>
 export type AnalysisInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   case?: boolean | Prisma.CaseDefaultArgs<ExtArgs>
 }
@@ -592,12 +592,12 @@ export type $AnalysisPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     caseId: string
-    summary: string
-    differentialDx: runtime.JsonValue
-    redFlags: string[]
-    recommendations: runtime.JsonValue
-    aiModel: string
     createdAt: Date
+    aiModel: string
+    differentialDx: runtime.JsonValue
+    recommendations: runtime.JsonValue
+    redFlags: string[]
+    summary: string
   }, ExtArgs["result"]["analysis"]>
   composites: {}
 }
@@ -1024,12 +1024,12 @@ export interface Prisma__AnalysisClient<T, Null = never, ExtArgs extends runtime
 export interface AnalysisFieldRefs {
   readonly id: Prisma.FieldRef<"Analysis", 'String'>
   readonly caseId: Prisma.FieldRef<"Analysis", 'String'>
-  readonly summary: Prisma.FieldRef<"Analysis", 'String'>
-  readonly differentialDx: Prisma.FieldRef<"Analysis", 'Json'>
-  readonly redFlags: Prisma.FieldRef<"Analysis", 'String[]'>
-  readonly recommendations: Prisma.FieldRef<"Analysis", 'Json'>
-  readonly aiModel: Prisma.FieldRef<"Analysis", 'String'>
   readonly createdAt: Prisma.FieldRef<"Analysis", 'DateTime'>
+  readonly aiModel: Prisma.FieldRef<"Analysis", 'String'>
+  readonly differentialDx: Prisma.FieldRef<"Analysis", 'Json'>
+  readonly recommendations: Prisma.FieldRef<"Analysis", 'Json'>
+  readonly redFlags: Prisma.FieldRef<"Analysis", 'String[]'>
+  readonly summary: Prisma.FieldRef<"Analysis", 'String'>
 }
     
 

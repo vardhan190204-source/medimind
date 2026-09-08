@@ -7,6 +7,55 @@ datasource db {
   provider = "postgresql"
 }
 
+model User {
+  id        String   @id @default(cuid())
+  name      String
+  username  String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  cases     Case[]
+}
+
+model Case {
+  id            String     @id @default(cuid())
+  title         String
+  patientAge    Int?
+  patientGender String?
+  symptoms      String?
+  clinicalNotes String?
+  status        CaseStatus @default(OPEN)
+  createdById   String
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+  analyses      Analysis[]
+  createdBy     User       @relation(fields: [createdById], references: [id])
+  documents     Document[]
+}
+
+model Document {
+  id            String       @id @default(cuid())
+  caseId        String
+  type          DocumentType
+  fileUrl       String
+  fileName      String
+  mimeType      String
+  extractedText String?
+  createdAt     DateTime     @default(now())
+  case          Case         @relation(fields: [caseId], references: [id], onDelete: Cascade)
+}
+
+model Analysis {
+  id              String   @id @default(cuid())
+  caseId          String
+  createdAt       DateTime @default(now())
+  aiModel         String
+  differentialDx  Json
+  recommendations Json
+  redFlags        String[]
+  summary         String
+  case            Case     @relation(fields: [caseId], references: [id], onDelete: Cascade)
+}
+
 enum CaseStatus {
   OPEN
   IN_PROGRESS
@@ -21,60 +70,4 @@ enum DocumentType {
   MRI
   NOTES
   OTHER
-}
-
-model User {
-  id        String   @id @default(cuid())
-  name      String
-  username  String   @unique
-  password  String
-  cases     Case[]
-  createdAt DateTime @default(now())
-}
-
-model Case {
-  id            String      @id @default(cuid())
-  title         String
-  patientAge    Int?
-  patientGender String?
-  symptoms      String?
-  clinicalNotes String?
-  status        CaseStatus  @default(OPEN)
-
-  createdById String
-  createdBy   User @relation(fields: [createdById], references: [id])
-
-  documents Document[]
-  analyses  Analysis[]
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
-model Document {
-  id            String       @id @default(cuid())
-  caseId        String
-  case          Case         @relation(fields: [caseId], references: [id], onDelete: Cascade)
-
-  type          DocumentType
-  fileUrl       String
-  fileName      String
-  mimeType      String
-  extractedText String?
-
-  createdAt DateTime @default(now())
-}
-
-model Analysis {
-  id             String   @id @default(cuid())
-  caseId         String
-  case           Case     @relation(fields: [caseId], references: [id], onDelete: Cascade)
-
-  summary        String
-  differentialDx Json
-  redFlags       String[]
-  recommendations Json
-  aiModel        String
-
-  createdAt DateTime @default(now())
 }
