@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-  "dev": "next dev",
-  "build": "next build",
-  "start": "next start",
-  "lint": "eslint",
-  "postinstall": "prisma generate"
-},
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "postinstall": "prisma generate"
+  },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
     "@google/genai": "^2.21.0",
@@ -23,6 +23,7 @@
     "clsx": "^2.1.1",
     "cn": "^0.2.4",
     "dotenv": "^17.4.2",
+    "framer-motion": "^13.2.0",
     "init": "^0.1.2",
     "jose": "^6.2.10",
     "lucide-react": "^1.40.0",

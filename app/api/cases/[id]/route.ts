@@ -1,23 +1,18 @@
-
 import { NextResponse } from "next/server";
 
 import { db } from "@/lib/prisma";
 import { getSession } from "@/lib/auth";
 
-
 // GET /api/cases/:id
 export async function GET(
   request: Request,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: Promise<{ id: string }> },
 ) {
   try {
     const session = await getSession();
 
     if (!session) {
-      return NextResponse.json(
-        { error: "Unauthorized" },
-        { status: 401 }
-      );
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
     const { id } = await params;
@@ -25,7 +20,7 @@ export async function GET(
     if (!id) {
       return NextResponse.json(
         { error: "Case ID is required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -45,10 +40,22 @@ export async function GET(
       },
     });
 
+    console.log("GET CASE DEBUG:", {
+      caseId: id,
+      sessionUserId: session.userId,
+      found: !!caseData,
+    });
+
     if (!caseData) {
       return NextResponse.json(
-        { error: "Case not found" },
-        { status: 404 }
+        {
+          error: "Case not found",
+          debug: {
+            caseId: id,
+            userId: session.userId,
+          },
+        },
+        { status: 404 },
       );
     }
 
@@ -60,25 +67,21 @@ export async function GET(
       {
         error: "Unable to fetch case",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
 
-
 // DELETE /api/cases/:id
 export async function DELETE(
   request: Request,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: Promise<{ id: string }> },
 ) {
   try {
     const session = await getSession();
 
     if (!session) {
-      return NextResponse.json(
-        { error: "Unauthorized" },
-        { status: 401 }
-      );
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
     const { id } = await params;
@@ -86,7 +89,7 @@ export async function DELETE(
     if (!id) {
       return NextResponse.json(
         { error: "Case ID is required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -98,10 +101,7 @@ export async function DELETE(
     });
 
     if (!existingCase) {
-      return NextResponse.json(
-        { error: "Case not found" },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: "Case not found" }, { status: 404 });
     }
 
     await db.case.delete({
@@ -120,13 +120,9 @@ export async function DELETE(
     return NextResponse.json(
       {
         error: "Unable to delete case",
-        details:
-          error instanceof Error
-            ? error.message
-            : "Unknown error",
+        details: error instanceof Error ? error.message : "Unknown error",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
-
